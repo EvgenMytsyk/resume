@@ -8,12 +8,13 @@
         {{#with web}}
         <div>
             <h2>Languages</h2>
+            <hr>
             <dl> {{#each languages}}
                 <b>
                     <dt>{{name}}, version: {{version}}</dt>
                 </b><br>
                 <dd>{{description}}</dd><br>
-                <hr>
+
 
                 <div>
                     <dl>
@@ -22,13 +23,6 @@
                         <dt><b>{{name}}</b></dt><br>
                         <dd>{{description}}</dd><br>
 
-                        {{#if ../attributes}}
-
-                        <dt><b>{{name}}</b></dt><br>
-                        <dd>{{description}}</dd><br>
-
-                        {{/if}}
-
                         <dl>
                             <p><b>Attributes</p></b>
                             {{#each attributes}}
@@ -36,36 +30,55 @@
                             <dd>{{description}}</dd>
                             {{/each}}
                         </dl>
-                        <hr>
-
-
-
-
 
                         {{/each}}
                     </dl>
                 </div>
+                <hr>
                 <div>
+                    <dl>{{#each attributes}}
+                        <p><b>Attributes</p></b>
+                        <dt><b>{{name}}</b></dt><br>
+                        <dd>{{description}}</dd><br>
 
 
+                        <dl>
+                            <p><b>Values</p></b>
+
+                            {{#each values}}
+                            <dt><b>{{value}}</b></dt>
+                            <dd>{{description}}</dd>
+                            {{/each}}
+                        </dl>
+                        <hr>
+
+                        {{/each}}
+                    </dl>
                 </div>
 
+                <div>
+                    <dl>{{#each functions}}
+                        <p><b>Functions</p></b>
+                        <dt><b>{{name}}</b></dt><br>
+                        <dd>{{description}}</dd><br>
 
+                        <dl>
+                            <p><b>Parameters</p></b>
+                            {{#each parameters}}
+                            <dt><b>Name:{{name}}</b></dt>
+                            <dt><b>type: {{type}}</b></dt>
+                            <dd>{{description}}</dd>
+                            {{/each}}
+                        </dl>
 
-
-
-
-
+                        <hr>
+                        {{/each}}
+                    </dl>
+                </div>
                 {{/each}}
             </dl>
+
         </div>
-        <hr>
-
-
-
-
-
-
 
         {{/with}}
     </section>
