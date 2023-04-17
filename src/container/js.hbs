@@ -1,0 +1,100 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <section>
+        {{> title data=name big=false}}
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{name}}</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                <p class="card-text">{{description}}</p>
+                {{#with history}}
+                <a href="#" class="card-link">Founder: {{founder}}</a>
+                <a href="#" class="card-link">Year: {{year}}</a>
+                {{/with}}
+            </div>
+        </div>
+
+        <div>
+            {{#each types}}
+            <span class="badge text-bg-secondary">{{this}}</span>
+            {{/each}}
+        </div>
+        <br>
+        <div>
+            {{#each syntax}}
+            <hr>
+            <span class="badge text-bg-secondary">{{@key}}</span>
+            <span class="badge text-bg-secondary">{{@this}}</span><br>
+            {{/each}}
+            <hr>
+        </div>
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Features
+            </button>
+            <ul class="dropdown-menu">
+                {{#each features}}
+                <li><a class="dropdown-item" href="#">{{this}}</a></li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Libraries
+            </button>
+            <ul class="dropdown-menu">
+                {{#each libraries}}
+                <li><a class="dropdown-item" href="#">{{this}}</a></li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Tools
+            </button>
+            <ul class="dropdown-menu">
+                {{#each libraries}}
+                <li><a class="dropdown-item" href="#">{{this}}</a></li>
+                {{/each}}
+            </ul>
+        </div>
+        <br>
+        <hr>
+
+        <div>
+            {{> title data='Community' big=false}}
+
+        </div>
+        <div>
+            <ol class="list-group list-group-numbered">
+                {{#each community}}
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">{{name}}</div>
+                        {{type}}
+                    </div>
+                    <span class="badge bg-primary rounded-pill">14</span>
+                </li>
+                {{/each}}
+            </ol>
+        </div>
+
+
+    </section>
+
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
