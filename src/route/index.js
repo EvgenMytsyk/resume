@@ -977,7 +977,7 @@ router.get('/facebook', function (req, res) {
             description:
               'A group for people who love hiking and the great outdoors',
             members: [
-              {git 
+              {
                 id: 8,
                 name: 'Sarah Johnson',
                 gender: 'Female',
