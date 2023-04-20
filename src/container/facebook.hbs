@@ -1,0 +1,97 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <section>
+        <p>
+        <h1>{{name}}</h1>
+        </p>
+        {{#each users}}
+        <ul>
+            <h2><ins>{{name}}</ins></h2>
+            <li>Gender: {{gender}}</li>
+            <li>Age: {{age}}</li>
+
+            <ul>
+                <h3><ins>Friends: </ins></h3>
+                {{#each friends}}
+                <li>{{name}}</li>
+                <li>Gender: {{gender}}</li>
+                <li>Age: {{age}}</li>
+
+                {{#if mutual_friends}}
+                <ul>
+                    <h3><ins>Mutural friends: </ins></h3>
+                    {{#each mutual_friends}}
+                    <li>{{name}}</li>
+                    <li>Gender: {{gender}}</li>
+                    <li>Age: {{age}}</li>
+                    <br>
+
+                    {{#if mutual_friends}}
+                    <ul>
+                        <h4><ins>Mutural friends: </ins></h4>
+                        {{#each mutual_friends}}
+                        <li>{{name}}</li>
+                        <li>Gender: {{gender}}</li>
+                        <li>Age: {{age}}</li>
+                        <br>
+                        {{/each}}
+
+                    </ul>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+                {{/if}}
+
+                {{!-- тут виводимо групи 2 --}}
+                {{#if groups}}
+                <h4><ins>Groups2: </ins></h4>
+                {{#each groups}}
+                <dl>
+                    <dt>{{name}}</dt>
+                    <dd>{{description}}</dd>
+                    {{#if members}}
+                    <ul>
+                        <b><ins>Members: </ins></b>
+                        {{#each members}}
+                        <li>{{name}} ({{gender}}, age: {{age}})</li>
+                        {{/each}}
+                    </ul>
+                    {{/if}}
+                </dl>
+                {{/each}}
+                {{/if}}
+
+                {{/each}}
+            </ul>
+
+            {{!-- тут виводимо групи 1 --}}
+            {{#if groups}}
+            <dl>
+                <h4><ins>Groups: </ins></h4>
+                {{#each groups}}
+                <dt>{{name}}</dt>
+                <dd>{{description}}</dd>
+                {{#if members}}
+                <ul>
+                    <b><ins>Members: </ins></b>
+                    {{#each members}}
+                    <li>{{name}} ({{gender}}, age: {{age}})</li>
+                    {{/each}}
+                </ul>
+                {{/if}}
+                {{/each}}
+            </dl>
+            {{/if}}
+        </ul>
+        {{/each}}
+    </section>
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
