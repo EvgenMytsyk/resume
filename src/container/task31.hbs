@@ -59,7 +59,7 @@
         <h2>{{title}}</h2>
         </p>
         <section>
-            <table class="table-striped col-7">
+            <table class="table col-7">
                 {{#with table}}
                 <thead>
                     <tr>
@@ -96,11 +96,13 @@
                     <div class="col-4">
                         <div class="card">
                             <div class="card-header">{{name}}</div>
-                            {{#each items}}
+
                             <ul class="list-group">
+                                {{#each items}}
                                 <li class="list-group-item">{{this}}</li>
+                                {{/each}}
                             </ul>
-                            {{/each}}
+
                         </div>
                     </div>
                     {{/each}}
