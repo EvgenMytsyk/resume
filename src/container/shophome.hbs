@@ -42,16 +42,19 @@
         {{/each}}
     </div>
     {{/with}}
-    {{!-- Навігаційне меню з вкалдками --}}
+    {{!-- Навігаційне меню з вкалдками TABS --}}
     {{#with goodsBlock}}
     <div class="nav nav-tabs mt-5 mb-5 ">
         {{#each tabs}}
         <div class="nav-item">
             {{#if isActive}}
             <a href="#" class="nav-link active">{{text}}</a>
-            {{/if}}
+            {{else}}
             {{#if isDisabled}}
             <a href="#" class="nav-link disabled">{{text}}</a>
+            {{else}}
+            <a href="#" class="nav-link">{{text}}</a>
+            {{/if}}
             {{/if}}
         </div>
         {{/each}}
