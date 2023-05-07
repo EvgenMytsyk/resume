@@ -1,0 +1,26 @@
+{{#with goodsOtherBlock}}
+<div class="mt-5 mb-5">
+    <h2 class="display-3 text-center">{{title}}</h2>
+</div>
+
+<div class="row">
+    {{#each cards}}
+    <div class="col-4">
+
+        <div class="card mb-5">
+            <img class="card-img-top" src="{{image}}" alt="image cap">
+            <div class="card-body">
+                <h6 class="card-title">{{title}}
+                    {{#if isHot}}<span class="bedge text-bg-warning rounded-pill">{{isHot}}</span>{{/if}}
+
+                    {{#if idNew}}<span class="bedge text-bg-primary rounded-pill">{{idNew}}</span>{{/if}}
+
+                </h6>
+                <p class="card-text">{{description}}</p>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{/with}}
+<hr>
