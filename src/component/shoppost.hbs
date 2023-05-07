@@ -1,0 +1,26 @@
+{{#with newsOtherBlock}}
+{{!-- тут прописуємо заголовок секції новин --}}
+<div class="mt-5 mb-5">
+    <h2 class="display-3 text-center">{{title}}</h2>
+</div>
+{{!-- тут прописуємо карточки з новинами --}}
+<div class="row">
+    {{#each cards}}
+    <div class="col-3 gx-2">
+
+        <div class="card mb-5 text-bg-dark">
+            <div class="card-body">
+
+                <h6 class="card-header">{{title}}
+                    {{#if isTop}}<span class="bedge text-bg-success rounded-pill">{{isHot}}</span>{{/if}}
+
+                    {{#if idNew}}<span class="bedge text-bg-danger rounded-pill">{{idNew}}</span>{{/if}}
+
+                </h6>
+                <p class="card-text">{{description}}</p>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{/with}}

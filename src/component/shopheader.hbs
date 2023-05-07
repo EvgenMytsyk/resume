@@ -1,0 +1,18 @@
+<div class="card">
+    <div class="row">
+        <div class="col-4">
+            <a href="#">
+                <h2 class="ms-3">LOGO</h2>
+            </a>
+        </div>
+        {{#with navigation}}
+        <div class="col-8">
+            {{#each links}}
+            <ul class="nav float-end">
+                <li><a class="nav-link" href="{{href}}">{{text}}</a></li>
+            </ul>
+            {{/each}}
+        </div>
+        {{/with}}
+    </div>
+</div>

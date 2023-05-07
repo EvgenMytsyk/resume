@@ -7,7 +7,7 @@
 
 <head>
 	<title>
-		Basic page
+		ShopName
 	</title>
 	<meta charset='utf-8' />
 	<link href='css/index.css' rel='stylesheet' />
@@ -17,9 +17,17 @@
 </head>
 
 <body>
-
+	{{> shopheader}}
 	{{! ↓ ця кострукція показує куди шаблонізатору треба вставляти код з container файлу --}}
 	{{{body}}}
+
+	{{> shopcard}}
+
+	{{> shopaction}}
+
+	{{> shopfooter}}
+
+
 
 
 
