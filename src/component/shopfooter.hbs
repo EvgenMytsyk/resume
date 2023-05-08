@@ -4,7 +4,10 @@
         <ul class="nav flex-column">
             {{#each this}}
             <li class="nav-item">
-                <a class="nav-link" href="{{link}}">{{text}}</a>
+                <a class="nav-link {{#if @last}} disabled {{/if}}" href="{{link}}">{{text}}</a>
+                {{!-- {{#if @last}}
+                <a class="nav-link disabled" href="{{link}}">{{text}}</a>
+                {{/if}} --}}
             </li>
             {{/each}}
         </ul>
