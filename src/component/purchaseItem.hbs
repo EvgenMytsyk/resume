@@ -1,0 +1,42 @@
+<section>
+    {{#with purchase}}
+    {{#each itemList}}
+    <div class="mt-3 mb-5">
+
+        <div class="row">
+            <div class="col-4">
+                <p>{{number}}</p>
+                <h5>{{status}}</h5>
+            </div>
+
+            <div class="col-2">
+                <p>{{amount.title}}</p>
+                <h4>{{amount.value}}</h4>
+            </div>
+
+            <div class="col-4">
+                <div>
+                    {{#each images}}
+                    <img src="{{this}}" alt="{{name}}" class="rounded">
+                    {{/each}}
+                </div>
+            </div>
+
+            <div class="col-2">
+                {{#with button}}
+                <div class=" container text-center mt-4 mb-1">
+                    {{#if isPrimary}}
+                    <button class="btn btn-primary">
+                        {{text}}
+                    </button>
+                    {{/if}}
+                </div>
+                {{/with}}
+            </div>
+        </div>
+        <hr>
+    </div>
+    {{/each}}
+    {{/with}}
+    <hr class="mb-3">
+</section>
