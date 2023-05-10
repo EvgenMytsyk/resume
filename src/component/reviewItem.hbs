@@ -1,0 +1,63 @@
+<section>
+    {{#each reviewList}}
+    <div class="card mt-5 mb-">
+
+        <div class="card mt-3 mb-4 ms-4 me-4">
+            <div class="card-header">
+                {{#with title}}
+                <h4>{{userName}}</h4>
+                <p>{{caption}}</p>
+                <p>{{date}}</p>
+                {{/with}}
+            </div>
+            <div class="body pb-3">
+                {{#with reviewBody}}
+                <div class="ms-3 mt-3 mb3">
+                    <p>{{seller.title}}: {{seller.value}}</p>
+                </div>
+
+                <div class="ms-3 mt-3 mb3">
+                    <p>{{rating.title}}: {{rating.value}}</p>
+                </div>
+
+                <div class="ms-3 mt-3 mb3">
+                    {{#each text}}
+                    <blockquote>{{this}}</blockquote>
+                    {{/each}}
+                </div>
+
+                <div class="ms-3 mt-3 mb3">
+                    {{#with advantages}}
+                    <p><b>{{title}}:</b></p>
+                    <p>{{text}}</p>
+                    {{/with}}
+                </div>
+
+                <div class="ms-3 mt-3 mb3">
+                    {{#with disadvantages}}
+                    <p><b>{{title}}:</b></p>
+                    <p>{{text}}</p>
+                    {{/with}}
+                </div>
+
+                <div class="ms-3 mt-3 mb3">
+                    {{#each images}}
+                    <img class="rounded" src="{{this}}" alt="reviewImage">
+                    {{/each}}
+                </div>
+                {{!-- коментарі інших користувачів --}}
+                <div>
+                    {{#each coments}}
+                    <div class="card mt-5 mb-1 ms-4 me-4">
+                        <h4>{{userName}}</h4>
+                        <p>{{date}}</p>
+                        <q>{{text}}</q>
+                    </div>
+                    {{/each}}
+                </div>
+                {{/with}}
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</section>
