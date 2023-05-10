@@ -1,0 +1,168 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+<main>
+    <section>
+        <div class="mb-5">
+            <h2>{{header}}</h2>
+        </div>
+        <div class="row">
+            {{#each sortBlock}}
+            <div class="col-3 mb-3 mt-3">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>{{placeholder}}</option>
+                    {{#each options}}
+                    <option value="{{value}}">{{text}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            {{/each}}
+        </div>
+        {{!-- Фільтр блок зліва --}}
+        <div class="row">
+            <div class="col-4">
+                {{#with filterBlock}}
+                <div class="card mt-3 mb-3">
+                    <div class="card-body">
+                        {{!-- Сортування за продавцем --}}
+                        <div>
+                            {{#with sellers}}
+                            <p>{{title}}</p>
+                            {{#each list}}
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">{{value}}</label>
+                            </div>
+                            {{/each}}
+                            {{/with}}
+                        </div>
+                        <hr>
+                        {{!-- Сортування за брендом --}}
+                        <div>
+                            {{#with brands}}
+                            <p>{{title}}</p>
+                            <input class="form-control mb-3" type="text" placeholder="{{input.placeholder}}">
+                            {{#each options}}
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">{{value}}</label>
+                            </div>
+                            {{/each}}
+                            {{/with}}
+                        </div>
+                        <hr>
+                        {{!-- Сортування за ціною --}}
+                        <div>
+                            {{#with price}}
+                            <p>{{title}}</p>
+                            <input class="form-control mb-3" type="text" placeholder="{{range.from}}">
+                            <input class="form-control mb-3" type="text" placeholder="{{range.to}}">
+                            <div>
+                                <a class="btn btn-outline-secondary" href="{{button.link}}">{{button.text}}</a>
+                            </div>
+                            {{/with}}
+                        </div>
+                        <hr>
+                        {{!-- Статус за відправкою --}}
+                        <div>
+                            {{#each filterList}}
+                            <p>{{title}}</p>
+                            <div>
+                                {{#each options}}
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">{{value}}</label>
+                                </div>
+                                {{/each}}
+                                <hr>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+                {{/with}}
+            </div>
+
+            <div class="col-8">
+                <div class="row">
+                    {{#each goodsList}}
+                    <div class="col-6">
+                        {{!-- Початок карточки катологу --}}
+                        {{> catalogItem}}
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            {{!-- <div class="col-4">
+                {{#each goodList}}
+                <div class="card mt-3 mb-3">
+                    <div class="card-body">
+                        <img class="card-img-top" src="{{img}}" alt="image cap">
+                        <h6 class="card-title">
+                            {{#if isHot}}<span class="bedge text-bg-warning rounded-pill">{{isHot}}</span>{{/if}}
+
+                            {{#if isNew}}<span class="bedge text-bg-primary rounded-pill">{{idNew}}</span>{{/if}}
+
+                        </h6>
+
+
+
+
+
+
+                    </div>
+                </div>
+                {{/each}}
+            </div> --}}
+
+
+
+
+
+
+
+            {{!-- <div class="col-4">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="card mt-3 mb-3">
+                            <div class="card-body">
+
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+</main>
